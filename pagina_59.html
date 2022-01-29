@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 59</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 59
+            function buscarItem(lista, valor){
+                var ind, pos;
+                for(ind=0; ind < lista.length; ind++){
+                    if(lista[ind] == valor)
+                        break;
+                }
+                    pos = (ind < lista.length)? ind : -1;
+                    return(pos);
+                }
+        </script>
+    </head>
+    <body>
+        
+        
+        <script>
+            // Pagina 59
+    var lista1 = new Array ("juan", "Pedro", "Luis", "Maria", "Julia");
+    var cad = "Juli";
+    var pos = buscarItem(lista1, cad);
+    if(pos >= 0 ){
+        document.write("<br> Buscar Array " + cad + " esta en la posicion " + pos);        
+    }else {
+        document.write("<br> Buscar Array " + cad + " no esta.");
+    }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 83</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+         <script language="JavaScript" src="rutbasica.js"></script>
+        <script language="JavaScript" src="objmovilenl.js"></script>
+        
+        <script>
+            function mianimacion(objest)
+            {
+             var indAct, x, y, xfin, yfin, blqAct;
+             var incX, incY;
+             for(indAct = 0; indAct < objest.puntos.length; indAct++){
+                 blqAct = objest.punto[indAct];
+                 x = blqAct.xAct;
+                 y = blqAct.yAct;
+                 xfin = objest.referX + indAct * 10;
+                 yfin = objest.referY;
+                 incX = 6 * objest.puntos.length/(1 + indAct);
+                 incY = 6 * objest.puntos.length/(1 + indAct);
+                 if (x < xfin)
+                 {
+                    x += incX;
+                    if (x > xfin) x= xfin;
+                 }
+             else{
+                 if (x > xfin)
+                 {
+                     x -= incX;
+                     if (z < xfin) x = xfin;
+                 }
+             }
+             if (y < yfin)
+             {
+                 y += incY;
+                 if (y > yfin) y = yfin;
+                 {
+                     y -= incY;
+                     if(y < yfin) y = yfin;
+                 }
+             }
+             blqAct.xAct = x;
+             blqAct.yAct = y;
+             blqAct.style.left = x;
+             blqAct.style.top = y;
+             blqAct.fin = (x == xfin) && (y == yfin)
+             }
+            }
+            // El evento temporizador sólo entiende de variables globales
+            // por eso se declara aquí la variable estela
+                var estela;
+                function iniciarEstela(texto)
+                {
+                    var puntos = new Array();
+                    for (i=0; i<texto.length; i++)
+                    {
+                        document.write('<div id="1'+i+'" style="position: absolute; ');
+                        document.write('width: 1px; height: 1px; color: red; ');
+                        document.write('z-index: 14; left: 0px; top: 0px;">'+texto.charAt(i));
+                        document.write('</div>');
+                        puntos[i] = "1" + i;
+                    }
+                    estela = new oEstela(puntos, -1, 10, -1, 20);
+                    for (i=0; i< estela.puntos.length; i++)
+                    {
+                        estela.puntos[i].xAct = estela.referX;
+                        estela.puntos[i].yAct = estela.referY;
+                        estela.puntos[i].fin = false;
+                    }
+                    document.onmousemove = new Function("estela.seguir() ");
+                    estela.tempor = setInterval("mianimacion(estela)", 5);
+                }
+        </script>
+    </head>
+    <body color="#ffffff">
+        
+        
+        <script>
+            iniciarEstela("Felicidades");
+        </script>
+    </body>
+</html>

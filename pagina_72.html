@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 72</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function cambiaEstado(iden){
+                var elhtml = document.getElementById(iden);
+                if(elhtml.style.display == "block")
+                    elhtml.style.display = "none";
+                else
+                    elhtml.style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        
+        <ul>
+                <li><a href="javascript:cambiaEstado('e1')">Entrada 1</a>
+                    <ul id="e1" class="nivel1">
+                        <li>apartado 1 de entrada 1</li>
+                        <li>apartado 2 de entrada 1</li>
+                    </ul>
+                </li>
+            
+            
+                <li><a href="javascript:cambiaEstado('e2')">Entrada 2</a>
+                    <ul id="e2" class="nivel1">
+                        <li>apartado 1 de entrada 2</li>
+                        <li>apartado 2 de entrada 2</li>
+                    </ul>
+                </li>
+            </ul>
+        
+        <script>
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 77</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            var sp = "";
+            function animaTitulo(){
+                var actual = document.title;
+                document.title = actual.substr(1) + sp + actual.substring(0, 1);
+                if(navigator.appVersion.indexOf("MSIE") >= 0)
+                    sp = (actual.substring(0, 1) == " ")? " " : " ";
+                setTimeout("animaTitulo()", 200);
+            }
+        </script>
+    </head>
+    <body color="#ffffff" onload="animaTitulo()">
+        
+        Contenido de la Página
+        <script>
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 74</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function oBotonCtrl(formul, idcampo, min, max)
+            {
+                this.control = "document.forms." + formul + "." + idcampo;
+                this.min = min;
+                this.max = max;
+                this.seguir = 0;
+                this.mas = new Function("this.seguir = 1; this.cambiar()");
+                this.menos = new Function("this.seguir = -1; this.cambiar()");
+                this.parar = new Function("this.seguir = 0");
+                this.cambiar = cambiar;
+                function cambiar()
+                {
+                    var lim = this.seguir > 0? this.max : this.min;
+                    // Crea la variable global $boton para el temporizador
+                    if(!window.$boton)
+                        window.$boton = this;
+                    var ctrl = eval(this.control);
+                    if(ctrl.value == "")
+                        ctrl.value = 0;
+                    if(ctrl.value != lim)
+                    {
+                        ctrl.value = parseInt(ctrl.value) + this.seguir;
+                        if(this.seguir != 0)
+                            // llama al metodo cambiar del objeto actual
+                        setTimeout("$boton.cambiar()", 200);
+                        else
+                         window.$boton = null;
+                 }
+                }                
+            } // Findel objeto boton
+        </script>
+    </head>
+    <body>
+        
+        <form name="form2" method="post" action="">
+            <input type="text" name="control">
+            <map name="m_ctrl2">
+                <area shape="rect" coords="0,0,13,10" href="javascript: void(0)"
+                      onmousedown="boton2.mas()" onmouseup="boton2.parar()">
+                <area shape="rect" coords="0,11,13,20" href="javascript: void(0)"
+                      onmousedown="boton2.menos()" onmouseup="boton2.parar()">
+            </map>
+            <img name="ctrl2" src="imagen/diablo.png" width="13" height="20" border="0"
+                 usemap="#m_ctrl2" align="absmiddle" hspace="0"
+                 onLoad="window.boton2 = new oBotonCtrl('form2', 'control', -50, 50)">
+                
+        </form>
+        <script>
+            
+        </script>
+    </body>
+</html>

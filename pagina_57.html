@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 57</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 57
+            function checkemail(email){
+                var ind1, ind2, ind3;
+                ind1 = email.indexOf("@");
+                ind2 = email.indexOf(".");
+                ind3 = email.lastIndexOf("@");
+                if((ind1 <= 0) || (ind2 < ind1) || (ind3 != ind1)){
+                    return "No es correcto";
+                } else {return "correcto";};
+            }
+        </script>
+    </head>
+    <body>
+        
+        <script>
+            // Pagina 57
+    var dire = "javascript@ciudadfutura.com";
+    document.write("<br> correo1 " + dire + " " + checkemail(dire));
+    dire= "jras@rest.@es";
+    document.write("<br> correo2 " + dire + " " + checkemail(dire));
+    
+        </script>
+    </body>
+</html>

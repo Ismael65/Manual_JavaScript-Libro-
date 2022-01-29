@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 60</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 60
+                function extraer(texto, etqini, etqfin){                    
+                    var ind0, ind1, parte="";                    
+                    ind0 = texto.indexOf(etqini);
+                    if(ind0 >= 0){
+                        ind1 = texto.indexOf(etqfin);
+                        if(ind1 > ind0){
+                            parte = texto.substring(ind0 + etqini.length, ind1);
+                        }
+                    return parte;   
+                    }
+                    
+                }
+        </script>
+    </head>
+    <body>
+        
+        
+        <script>
+            // Pagina 60
+    var cadena = "Esta cadena es la que, en el ejemplo, se va a procesar";    
+    document.write("<br>" + cadena);
+    document.write("<br> Cadena extraida: <br>" );
+    cadena1 = extraer(cadena, "en", "se");
+    document.write(cadena1);
+        </script>
+    </body>
+</html>

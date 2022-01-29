@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 70</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            var mie = (navigator.appName.indexOf("Microsoft") > 0);
+            function cambProp(obj, propIE, propNS, valorIE, valorNS){
+                if(mie){
+                    obj = document.all[obj];
+                    obj.style[propIE] = valorIE;
+                }else{
+                    obj = document.layers[obj];
+                    obj[propNS] = valorNS;
+                }
+            }
+        </script>
+    </head>
+    <body color="#ffffff">
+        
+        <a href="pagina.html" onmouseout="cambProp('enlace', 'background','bgColor','yellow','yellow')"
+            onmouseout="cambProp('enlace', 'background','bgColor', 'null')">
+            <span id="enlace" style="position: relative">rollover</span>
+        </a>
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 62</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+           // Pagina 62
+           var mie = (navigator.appName.indexOf("Microsoft") >= 0);
+           
+           function actReloj(){
+               var hhmmss = new Date();
+               var horas = hhmmss.getHours();
+               var minutos = hhmmss.getMinutes();
+               var segundos = hhmmss.getSeconds();
+// Convertir los numeros a dos digitos, o sea, 6->06
+                horas = (horas <= 9)? ("0" + horas) : horas;
+                minutos = (minutos <= 9)? ("0" + minutos) : minutos;
+                segundos = (segundos <=9)? ("0" + segundos) : segundos;
+// Aqui construimos la cadena de texto HTML con la hora, y el tipo de letra que se escribe 
+// en cada capa del reloj
+               reloj = "<font size=`5` face=`Arial`><b>" + horas + ":" + minutos + ":"
+               + segundos + "<b></font>";
+               if(mie){
+                    reloj.innerHTML = reloj;
+               } else {
+                    document.write(reloj);
+                   document.close();
+              // Ejecuta la funcion cada segundo (1000 miliseg)
+                setTimeout("actReloj()", 1000);
+               }
+           }
+           document.addEventListener("onload", actReloj(), false); 
+        </script>
+    </head>
+    <body>
+        <!-- Pagina 62 
+         <div id="reloj" style="position: relative; top: 50; right: 50; "></div> -->
+
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

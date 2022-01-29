@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 58</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 58
+            function checkMail(cadena){
+                var plant = /[^\w^@^\.^-]+/gi;
+                if(plant.test(cadena)){
+                    alert(cadena + " Contiene caracteres extraños.");
+                }else{
+                    plant = /(^\w+)(@{1})([\w\.-]+$)/i;
+                    if(plant.test(cadena)){
+                        alert(cadena + " Es correcta.");
+                    }else {
+                        alert(cadena + " No es valida.");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Pagina 58 -->
+    <form name="form1" method="post" action="">
+    Introduce tu correo
+    <input type="text" name="email">
+    <input type="button" name="Button" value="Comprobar" onclick="checkMail(this.form.email.value)">
+    </form>
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

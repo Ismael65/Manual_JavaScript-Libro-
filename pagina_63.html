@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 63</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagian 63
+           function ultActual(){
+               var cfecha = document.lastModified;
+               var meses = new Array("Enero", "Febrero", "Marzo", "Abril",  "Mayo", "Junio", "Julio",  "Agosto", "Septiembre", "Octubre",  "Noviembre", "Diciembre");
+               var fecha = new Date(Date.parse(cfecha));
+               var dia = fecha.getDate();
+               var mes = meses[fecha.getMonth()];
+               var ano = fecha.getFullYear();               
+               return(dia + " de " +  mes + " de " + ano);
+               
+           }
+           
+        </script>
+    </head>
+    <body>
+        
+        
+        <script>
+            document.write("Esta pagina se actualizó el " + ultActual());
+        </script>
+    </body>
+</html>

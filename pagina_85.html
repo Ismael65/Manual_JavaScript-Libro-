@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 85</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function buscarTxt(texto)
+            { if(!document.all) return
+                var contenido = document.body.createTextRange();
+                var seguir = true;
+                var temporal = contenido.duplicate();
+                var existe = temporal.findText(texto, 0, 0);
+                while(existe && seguir)
+                {
+                    temporal.scrollIntoView(true);
+                    temporal.select();
+                    // Modifica contenido para que comience al final
+                    // de la palabra encontrada
+                    contenido.setEndPoint("StarToEnd", temporal);
+                    seguir = confirm("¿Continuar la búsqueda?");
+                    if (seguir)
+                    {
+                        // repite la búsqueda
+                        temporal = contenido.duplicate();
+                        existe = temporal.findText(texto, 0,0);
+                    }
+                }
+                if (seguir)
+                {
+                    alert("Fin del documento");
+                }
+            }
+        </script>
+    </head>
+    <body color="#ffffff">
+        
+        
+            <br>
+            
+            <span id="nombre_mineral"><strong>Atacamita</strong></span>
+            <span id="clasifi"> Halogenuros</span> <br>
+            <span id="formula">Cu<sub>2</sub>(OH)<sub>3</sub>Cl</span> <br>
+        <strong>Dureza:</strong> 3 a 3,5. <br>
+        <strong>Raya:</strong> verde manzana.<br>
+        <strong>Color:</strong> verde, verde oscuro, verde negruzco.<br>
+        <strong>Transparencia:</strong> translúcido a transparente.<br>
+        <strong>Brillo:</strong> vítreo a adamantino.<br>
+        <strong>Exfoliación:</strong> buena según (010).  <br>
+        <strong>Fractura:</strong> concoidea.<br>
+        <strong>Morfología:</strong> cristales aciculares, tabulares, agregados esféricos y fibrosos.<br>
+        <strong>Densidad:</strong> 3,76. <br>
+        <strong>Sistema cristalino:</strong> ortorrómbico.  <br>
+        <strong>Forma de los cristales:</strong> prismáticos, tabulares, raramente pseudooctaédricos, isométricos.  <br>
+        <strong>Composición química:</strong> Cu 59,51%, Cl 16,60%, O 11,24%, H<sub>2</sub>O 12,65%.  <br>
+        <strong>Propiedades:</strong> fácilmente soluble en ácidos y amoniaco, funde sobre carbón y colorea la llama de azul.  <br>
+        <strong>Manipulaciones:</strong> limpiar con agua.  <br>
+        <strong>Minerales parecidos:</strong> malaquita, olivenita.  <br>
+        <strong>Diferencias:</strong> con la olivenita, sobre carbón da aureola blanca de As<sub>2</sub>O<sub>3</sub>; con la malaquita, a la llama reductora da partículas de cobre, reacciones químicas y rayos X.  <br>
+        <strong>Génesis:</strong> secundaria, en fumarolas.<br>
+        <strong>Paragénesis:</strong> cobre, cuprita, malaquita, limonita.  <br>
+        <strong>Usos:</strong> mena de Cu. <br>
+
+        
+        <br>
+        Atacamita<br>
+        Halogenuros<br>
+        3 a 3,5.<br>
+        verde manzana.<br>
+        verde, verde oscuro, verde negruzco<br>
+        
+        <form name="form1" method="post" action="">
+            <input type="text" name="texto">
+            <input type="button" name="Button" value="Buscar" onclick="buscarTxt(this.form.texto.value)">
+        </form>  
+        
+    </body>
+</html>

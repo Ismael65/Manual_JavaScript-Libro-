@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 61</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+             // Pagina 60-A
+                function iva(){
+                    return Math.round(this.valor*0.16);                    
+                }
+                function total(reb){
+                    var precio = this.iva() + this.valor;
+                    precio = precio - precio * reb / 100;
+                    return Math.round(precio);
+                }
+                function obj_articulo(desc, cod, precio){
+                    this.desc=desc;
+                    this.codigo=cod;
+                    this.valor=precio;
+                    this.iva=iva;
+                    this.pvp=total;
+                }
+        </script>
+    </head>
+    <body>
+        
+        
+        <script>
+            // Pagina 60-A
+    var item = new obj_articulo("Raton PS2", "PerRt-01", 500);
+    document.write("<br>Articulo: " + item.desc + " (" + item.codigo + " )" + "<br>");
+    document.write("Precio: " + item.valor + "Dolares<br>");
+    document.write("IVA: " + item.iva() + "Dolares<br>");
+    document.write("Precio venta :" + item.pvp(10) + " Dolares (Dto 10%)<br>");
+    // Pagian 63
+    document.write("<br>Esta página se actualizó el " + ultActual());
+        </script>
+    </body>
+</html>

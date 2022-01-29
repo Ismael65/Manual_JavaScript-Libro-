@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 64</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 64
+            var mie = (navigator.appName.indexOf("Microsoft") >= 0 );
+            var itemOrig;
+            function despMenu(nombre, sn){
+                obj = document.all[nombre];
+                if(sn > 0){
+                    obj.style.visibility = "visible";
+                }else {
+                    obj.style.visibility = "hidden";
+                }
+            }
+            function destacar(obj, val){
+                if(val == 1){
+                    itemOrig = obj.style.backgroundColor;
+                    obj.style.backgroundColor = "#D3C23D";
+                }else {
+                    obj.style.backgroundColor = itemOrig;
+                }
+            }
+        </script>
+        
+        <style type="text/css">
+            /*  Pagina 64*/
+            .itMenu{
+                position: absolute;
+                clip: rect();
+                background: #99ff99;
+                visibility: hidden;
+            }
+            .cabMenu{
+                position: absolute;
+                clip: rect();
+                color: #ffff66;
+                background: #0033ff;
+                
+            }
+            .itMenuAct{
+                background: #ccffff;
+                width: 160px;
+                
+            }
+            .itMenuDes{
+                background: #99ff99;
+                width: 160px;
+            }           
+           
+        </style>
+    </head>
+    <body>
+        <!-- Pagina 64-->
+        <div id="Menu1" style="width: 160px; height: 21px; z-index: 2; left: 39px; top: 10px;" class="cabMenu"
+             onMouseover="despMenu(`itMenu1`, 1)" onMouseout="despMenu(`itMenu1`, 0)">Cabecera del menú</div>
+        
+        <div id="itMenu1" style="width: 103px; height: 75px; z-index: 1; left: 39px; top: 32px;" class="itMenu"
+             onMouseover="despMenu(this.id, 1)" onMouseout="despMenu(this.id, 0)">
+            
+        <div id="itMenu11" class="itMenuDes" onMouseover="destacar(this, 1)" onMouseout="destacar(this, 0)">
+                
+            <a href="#">Item 1</a>
+        </div>
+        <div id="itMenu12" class="itMenuDes" onMouseover="destacar(this, 1)" onMouseout="destacar(this, 0)">
+                
+            <a href="#">Item 2</a>
+        </div>
+        <div id="itMenu13" class="itMenuDes" onMouseover="destacar(this, 1)" onMouseout="destacar(this, 0)">
+                
+            <a href="#">Item 3</a>
+        </div>
+        <div id="itMenu14" class="itMenuDes" onMouseover="destacar(this, 1)" onMouseout="destacar(this, 0)">
+                
+            <a href="#">Item 4</a>
+        </div>
+       </div>
+
+
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

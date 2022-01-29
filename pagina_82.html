@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 82</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script language="JavaScript" src="rutbasica.js"></script>
+        <script language="JavaScript" src="objmovilenl.js"></script>
+        
+        <script>
+            function iniAnima()
+            {
+                var estnav = new oMovil("estrella", 10, 200, 600, 190, 60, true, movEstrella);
+                estnav.situar();
+                animEst = new oAnimacion(estnav);
+                animEst.iniciar("animEst");
+            }
+            function movEstrella()
+            {
+                var y, x;
+                x = Math.round(this.leerX() + this.incx);
+                y = this.py0 + Math,round(40*Math.sin(x*Math.PI/180));
+                this.ponY(y);
+                this.ponX(x);
+                this.situar();
+                this.esFinal = Math.abs(this.px1-x) < Math.abs(this.incx);
+            }
+        </script>
+    </head>
+    <body color ="#ffffff" onload=iniAnima()>
+        
+        <div id="estrella" style="position: absolute; z-index: 1; width: 1px; 
+             height: 1px; overflow: visible; left: 6px; top: 14px;"><img
+                src="imagen/diablo.png" width="57" height="37"></div>
+        
+        
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

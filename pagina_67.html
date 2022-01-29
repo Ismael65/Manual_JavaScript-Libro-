@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 67</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 67
+           var mie = (navigator.appName.indexOf("Microsoft") >= 0);
+            function cambColores(fondos, letras){
+                var ind;
+                if(!mie){
+                    // return;
+                    ind = fondos.selectedIndex;
+                    document.bgColor = fondos.options[ind].value;
+                    ind = letras.selectedIndex;
+                    document.fgColor = letras.options[ind].value;
+                    return;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Pagina 67-->
+        <div>
+            <h2>Esta es una muestra de personalización de colores</h2>
+
+            <form name="form1" method="post" action="">
+                Fondo:
+                <select name="fondo">
+                    <option value ="yellow">Amarrillo</option>
+                    <option value ="white">Blanco</option>
+                    <option value ="Blue">Azul</option>
+                </select>
+                Texto:
+                <select name="texto">
+                    <option value ="yellow">Amarrillo</option>
+                    <option value ="white">Blanco</option>
+                    <option value ="Blue">Azul</option>
+                </select>
+
+                <input type="button" name="Button" value="Cambiar" onclick="cambColores(parentElement.fondo, parentElement.texto)">
+            </form>
+        </div>
+
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 75</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function password(texto){
+                if(texto != ""){
+                    location.href = texto + ".html";
+                }
+                // sentencia para redireccionar
+                location.replace("paginabase.html");
+            }
+            
+        </script>
+    </head>
+    <body color="#ffffff">
+        <form name="pass" action=""> Teclea tu password:
+            <input type="password" name="clave">
+            <input type="button" name="entrar" onclick = "password(this.form.clave.value)">
+        </form>
+        
+        
+        <script>
+            
+        </script>
+    </body>
+</html>

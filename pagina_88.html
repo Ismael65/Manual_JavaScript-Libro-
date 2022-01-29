@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 88</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            var lista = new Array("1.JPG", "2.JPG", "3.JPG", "4.JPG");
+            var contador = 0;
+            var tiempo = 0;
+            var tempor = null;
+            function cambio(sen)
+            {
+                contador += sen;
+                if (contador == lista.length) contador = lista.length-1;
+                else
+                    if (contador < 0) contador = 0;
+                document.images.centro.src = lista[contador];
+                window.status = "Imagen numero " + contador;
+            }
+            function reset()
+            {
+                contador = 0;
+                fin = false;
+                document.images.centro.src = lista[0];
+            }
+            function automat(seg)
+            {
+                
+                tiempo = parseInt(seg);
+                reset();
+                window.status = "Pause automático";
+                if(isNaN(tiempo) || tiempo <= 0)
+                    alert("Error en el tiempo");
+                else
+                    tempor = setTimeout(pasar(), tiempo);
+            }
+            function parar()
+            {
+                clearTimeout(tempor);
+            }
+            function pasar()
+            {
+                cambio(1);
+                if (contador < lista.length - 1);
+                tempor = setTimeout(pasar(), tiempo);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <table width="82%" border="0" align="center">
+            <tr>
+                        <td width="30%" align="right" height="247"><font color="#0033cc"><b>
+                                <a href="javascript:cambio(-1);">atras</a>
+                            </b></font></td>
+                        <td align="center" width="48%" height="247"><img id="centro" src="1.jpg" height="170"></td>
+                        <td width="22%" height="247"><font color="#0033cc"><b>
+                                 <a href="javascript:cambio(1);">avance</a>
+                                    </b></font></td>
+            </tr>
+            <tr>
+                <td width="30%" align="right"><font color="#0033cc"></font></td>
+                <td width="48%" align="center"><b><font color="#0033cc">Automatico</font></b>
+                    <form name="form1" method="post" action="javascript:automat(this.form1.tiempo.value);">
+                        <input type="text" name="tiempo" value="">
+                        <br>
+                        <input type="button" name="Button" value="Inicio" onclick="automat();">
+                        <input type="button" name="Button2" value="Parar" onclick="parar();">                        
+                    </form>
+                </td>
+                <td width="22%"><font color="#0033cc"></font></td>
+            </tr>
+        </table>
+        
+        
+        
+    </body>
+</html>

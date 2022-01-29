@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 71</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function o_Navegador(){
+                this.nombre = navigator.appName;
+                this.iniciar = iniciar;
+                this.IE = this.nombre.toUpperCase().indexOf('MICROSOFT') >= 0;
+                this.NS = this.nombre.toUpperCase().indexOf('NETSCALE') >= 0;
+                this.OP = this.nombre.toUpperCase().indexOf('OPERA') >= 0;
+                this.XX = !this.IE && !this.NS && !this.OP;
+                this.version = this.iniciar();
+                this.Verent = parseInt(this.version);
+                this.standard = (this.IE && this.Verent >= 6) || (this.NS && this.Verent >= 6)
+                
+                /* ======
+                    FUNCTION: iniciar
+                    ARGS: ninguno.
+                    RETURN: nada
+                    DESCR: Inicializar los valores del objeyo
+                  =======*/
+             function iniciar(){
+                 var ver = navigator.appVersion;
+                 if(ver + "" != "NaN"){
+                     if(this.IE){
+                         ver.match(/(MSIE)(\s)([0-9].[0-9]+)/ig);
+                         ver = regExp.$3;
+                     }
+                     return ver;
+                 } //Termina la funcion iniciar el Objeto                     
+                 } // Termina la definicion del objeto
+             }
+        </script>
+    </head>
+    <body>
+        
+        
+        <script>
+            visita = new o_Navegador();
+            document.write("Navegador: " + visita.nombre + "<br>");
+            document.write(" Version: " + visita.version + "<br>");
+            if(visita.standard){
+                document.write("Este navegador cumple con la regulacion");
+                document.write(" DOM1 del W3C <br>");
+            }else{
+                document.write("Este navegador NO cumple con la regulacion");
+                document.write(" DOM1 del W3C <br>");
+            }
+        </script>
+    </body>
+</html>

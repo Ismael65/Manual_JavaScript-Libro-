@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina 68</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Pagina 68
+            var mie = (navigator.appName.indexOf("Microsoft") >= 0);
+            var txtAct="";
+            
+            function vertical(primera, capa, sent, vel)
+            {
+                var dimen=0;
+                // primera vez que se ejecuta, iniciar todo
+                if(primera)
+                {
+                    // txtAct: objeto global con la capa del scroll.
+                    txtAct = (mie)? document.all[capa] : document.Layers[capa];
+                    txtAct.alto = (mie) ? txtAct.offsetHeight : txtAct.clip.height;
+                        txtAct.clp = 0;
+                        if (mie)
+                            txtAct.sup = txtAct.style.posTop + txtAct.alto * sent;
+                        else
+                            txtAct.sup = TxtAct.top + txtAct.alto * sent;
+                        txtAct.incr = Math.round(txtAct.alto * vel / 100);
+                    } else
+                    {
+                        txtAct.clp += txtAct.incr;
+                        // La region de recorte no puede tener una altura mayor del 100%
+                        if (txtAct.clp > 100)
+                            txtAct.clp = 100;
+                    }
+                    if (sent > 0)
+                        dimen = txtAct.clp;
+                    else
+                        dimen = 100 - txtAct.clp;
+
+                    if (mie)
+                    {
+                        if (sent > 0) // de Abajo hacia Arriba sent = 1
+                        {
+                            txtAct.style.clip = 'rect(auto, auto, ' + dimen + '%, auto)';
+                        } else
+                        {
+                            txtAct.style.clip = 'rect(' + dimen + '%, auto, auto, auto)';
+                        }
+                        txtAct.style.posTop = Math.round(txtAct.sup - txtAct.alto * dimen / 100);
+                    } else
+                    {
+                        if (sent > 0)
+                            txtAct.clip.bottom = Math.round(dimen * txtAct.alto / 100);
+                        else
+                            txtAct.clip.top = Math.round(dimen * txtAct.alto / 100);
+                        txtAct.top = Math.round(txtAct.sup - txtAct.alto * dimen / 100);
+                    }
+                    if (primera)
+                        verCapa(txtAct, true);
+
+                    if (txtAct.clp < 100)
+                        setTimeout("vertical(false, ''," + sent + "," + txtAct.incr + ")", txtAct.vel);
+
+                    else
+                        txtAct.clp = -1;
+
+                }
+                               
+            // Muestra u oculta una capa
+            function verCapa(obj, sn)
+            {
+                var mostrar = (sn)? 'block' : 'none';
+                var estado = (sn)? 'visible' : 'hidden';
+                if(mie)
+                    {obj.style.display = mostrar;
+                     obj.style.visibility = estado;
+                 }
+                 else
+                     obj.visibility = estado;
+
+                }
+            
+        </script>
+        
+        <style>
+             /* Pagina 68 */
+            #layer1{
+                position: absolute; 
+                width: 200px; 
+                height: 115px;
+                z-index: 1; 
+                left: 200px; 
+                top: 138px; 
+                background: #ccff66; 
+                layer-background-color: ccff66; 
+                border: 1px; none #000000; 
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+         <!-- Pagina 68 -->
+        <div id="Layer1" cl>
+            Este es el texto que queremos ver desplazándose y con los botones de
+            arriba podemos hacer que el párrafo vaya apareciendo de arriba a bajo
+            o de abajo arriba. Existe otra forma de lograr este efecto usando 
+            capas anidadas, pero Netscape se lleva mal con los anidamientos de capas.
+            Este es el texto que queremos ver desplazándose y con los botones de
+            arriba podemos hacer que el párrafo vaya apareciendo de arriba a bajo
+            o de abajo arriba. Existe otra forma de lograr este efecto usando 
+            capas anidadas, pero Netscape se lleva mal con los anidamientos de capas.</div>
+        
+        <input type="button" name="Button" value="Arriba" onclick="vertical(true, `Layer1`, 1, 2)">
+        <input type="button" name="Button" value="Abajo" onclick="vertical(true, `Layer1`, 0, 2)">
+        
+        
+        <script>
+            
+        </script>
+    </body>
+</html>
